@@ -5,7 +5,6 @@ import dotenv from 'dotenv';
 import ip from 'ip';
 import cors from 'cors';
 
-
 //test
 
 const app = express();
@@ -16,6 +15,7 @@ dotenv.config();
 const supabase = createClient(`${process.env.DATABASE}`, `${process.env.DB_PASSWORD}`);
 
 app.use(bodyParser.json());
+app.use(express.json());
 app.use(cors());
 app.options('*', cors());
 
